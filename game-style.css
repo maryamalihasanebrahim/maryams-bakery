@@ -1,0 +1,60 @@
+body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+button {
+  padding: 0px 20px 0px 20px;
+}
+
+h1 {
+  margin: 20px 10px 0px 10px;
+  font-size: 25px;
+  font-weight: 100;
+}
+
+
+.message {
+  display: inline-block; 
+  font-weight: 100;
+  color: #9E9E9E;
+  margin: 10px 10px 15px 10px;
+}
+
+.threeBythree {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+}
+
+.cards {
+  width: 70px;
+  height: 70px;
+  margin: 10px;
+  border: none;
+
+}
+
+.score {
+  text-align: left;
+  margin: 0px 10px 2px 10px;
+  font-weight: 100;
+
+}
+
+
+.board2 {
+  opacity: 0;
+}
+
+.board1 {
+  opacity: 1;
+}

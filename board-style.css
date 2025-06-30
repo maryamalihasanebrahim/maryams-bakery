@@ -1,0 +1,49 @@
+body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+button {
+  padding: 0px 20px 0px 20px;
+}
+
+h1 {
+  margin: 20px 10px 10px 10px;
+  font-size: 40px;
+  font-weight: 100;
+}
+
+h2 {
+  margin: 0px 10px 20px 10px;
+  font-size: 30px;
+  font-weight: 100;
+}
+.board {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.sizes {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  font-weight: 200;
+  border: none;
+  padding: 10px 40px 10px 40px;
+}
+
+
+a {
+  text-decoration: none;
+}
