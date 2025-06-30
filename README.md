@@ -1,5 +1,6 @@
 # matchi-matchi
-(adorable) memory card game. 
+
+(adorable) memory card game.
 
 ## Date: DD/MM/YYYY
 
@@ -11,35 +12,26 @@
 
 ### **_Description_**
 
-#### this memory card game allows the user to choose the size of their board and randomizes the placement of the cards accordingly\*\*
+#### this memory card game allows the user to choose the size of their board and randomizes the placement of the cards accordingly
 
 ---
 
 ### **_Technologies Used_**
 
-
-
 ---
 
 ### **_Getting Started_**
-
-
 
 ---
 
 ### **_Screenshots_**
 
-
-
 ---
 
 ### **_Future Updates_**
 
-
-
 ---
 
 ### **_Credits_**
-
 
 ---
