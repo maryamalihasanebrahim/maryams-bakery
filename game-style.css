@@ -52,6 +52,12 @@ img {
   font-weight: 100;
 }
 
+.best {
+  text-align: left;
+  margin: 0px 10px 2px 10px;
+  font-weight: 100;
+}
+
 .board2 {
   opacity: 0;
 }
@@ -61,5 +67,5 @@ img {
 }
 
 .fruit {
-  opacity: 0
+  opacity: 0;
 }

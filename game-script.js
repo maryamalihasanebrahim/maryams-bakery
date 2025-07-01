@@ -5,27 +5,61 @@ let start = document.querySelector('.message')
 let popup = document.querySelector('.popup')
 let flag = false
 let firstCard = ''
+let firstCardElement = ''
 let secondCard = ''
 let currentScore = 0
+let bestScore = 0
 let scoreDisplay = document.querySelector('.score')
+let bestDisplay = document.querySelector('.best')
 let heartBeat = false
+let background = document.querySelectorAll('button')
+let firstIndex = 0
+let secondIndex = 0
+let enable = false
 
 // FUNCTIONS
 updateScore = () => {
   currentScore++
+  bestScore++
   scoreDisplay.innerText = 'new: ' + currentScore
+  bestDisplay.innerText = 'best: ' + bestScore
 }
 
-let flippingAction = () => {
-  if (firstCard === secondCard) {
-    console.log(
-      'this is an error unless printed after this logs and this logs 2'
-    )
-    // firstCard.style.opacity = '1'
-    // secondCard.style.opacity = '1'
-    // updateScore()
+let halfFlip = (firstIndex, secondIndex) => {
+  console.log('enters function')
+  console.log("when no equal first card is" + firstCard)
+  console.log("when no equal first card is" + secondCard.id)
+  if (firstCard !== secondCard.id) {
+    fruit[firstIndex].style.opacity = '1'
+    fruit[secondIndex].style.opacity = '1'
+    background[firstIndex].style.backgroundColor = 'white'
+    background[secondIndex].style.backgroundColor = 'white'
+  }
+  setTimeout(() => {
+    fruit[firstIndex].style.opacity = '0'
+    fruit[secondIndex].style.opacity = '0'
+    background[firstIndex].style.backgroundColor = 'rgb(255, 228, 228)'
+    background[secondIndex].style.backgroundColor = 'rgb(255, 228, 228)'
+  }, 2000)
+  console.log('try again')
+}
+
+console.log([fruit])
+let flippingAction = (firstIndex, secondIndex) => {
+  if (firstCard === secondCard.id) {
+    fruit[firstIndex].style.opacity = '1'
+    fruit[secondIndex].style.opacity = '1'
+    background[firstIndex].style.backgroundColor = 'white'
+    background[secondIndex].style.backgroundColor = 'white'
+    updateScore()
+    return
+  }
+
+  else {
+    halfFlip(firstIndex, secondIndex)
   }
 }
+
 
 let startGame = () => {
   flag = true
@@ -59,19 +93,38 @@ setTimeout(() => {
 
 heartOfTheGame = () => {
   for (let i = 0; i < cards.length && heartBeat; i++) {
-    heartBeat = false
     cards[i].addEventListener('click', () => {
+      // to prevent a card that has been clicked to be clicked again and provide the output of a pair
+      if (cards[i] === firstCardElement) {
+        return
+      }
+      console.log('first card: ' + firstCard)
+      console.log('second card:' + secondCard)
       if (!firstCard) {
         firstCard = cards[i].id
-        console.log('first click')
+        firstCardElement = cards[i]
+        console.log('first card flipped')
+        firstIndex = i
         return
       }
       if (!secondCard) {
-        secondCard = cards[i].id
-        console.log('second click')
+        secondCard = cards[i]
+        console.log('second card flipped')
+        secondIndex = i
+        console.log(firstIndex + ' and ' + secondIndex)
+        flippingAction(firstIndex, secondIndex)
+        firstCard = ''
+        secondCard = ''
+        console.log('first card: ' + firstCard)
+        console.log('second card:' + secondCard)
+        firstCardElement = ''
+        return
       }
     })
   }
 }
 
-// put this into a function
+
+
+
+
