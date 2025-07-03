@@ -37,24 +37,22 @@ updateScore = () => {
   scoreDisplay.innerText = 'new: ' + currentScore
   bestDisplay.innerText = 'best: ' + bestScore
   setTimeout(() => {
-    if (currentScore >= 6) {
+    if (currentScore >= 10) {
       currentScore = 0
       heartBeat = false
       board.style.opacity = '0'
       popup.innerText = 'you win!'
-      popup.appendChild(playAgain).innerText = 'play level 2'
+      popup.appendChild(playAgain).innerText = 'play level 3'
       playAgain.style.visibility = 'visible'
       hoverOverPlayAgain()
     }
   }, 400)
-  // return
+  return
 }
 
 let halfFlip = (firstIndex, secondIndex) => {
   if (firstCard !== secondCard.id) {
     setTimeout(() => {
-      // console.log('two cards arent the same ')
-      // console.log('index 1 is ' + firstIndex + 'index 2 is ' + secondIndex)
       fruit[firstIndex].style.opacity = '0'
       fruit[secondIndex].style.opacity = '0'
       background[firstIndex].style.backgroundColor = 'rgb(255, 228, 228)'
@@ -70,8 +68,6 @@ let halfFlip = (firstIndex, secondIndex) => {
 }
 
 let hoverOverPlayAgain = () => {
-  // console.log('firstCard', firstCard)
-  // console.log('second card', secondCard)
   playAgain.addEventListener('mouseover', () => {
     playAgain.style.opacity = '0.5'
   })
@@ -83,11 +79,11 @@ let hoverOverPlayAgain = () => {
     board.style.opacity = '1'
     for (let i = 0; i < cards.length; i++) {
       console.log('enters remover')
-
+      popup.style.margin = '10px 10px 15px 10px'
       background[i].style.backgroundColor = 'rgb(255, 228, 228)'
       cards[i].removeEventListener('click', cardGame)
     }
-    window.location.href = 'level-2.html'
+    window.location.href = 'level-3.html'
     // setTimeout(() => {
     //   popup.innerText = 'ready?'
     // }, 1000)
@@ -106,7 +102,6 @@ let hoverOverPlayAgain = () => {
 
 let flippingAction = (firstIndex, secondIndex) => {
   if (firstCard === secondCard.id) {
-    // console.log('two cards are the same')
     fruit[firstIndex].style.opacity = '1'
     fruit[secondIndex].style.opacity = '1'
     background[firstIndex].style.backgroundColor = 'white'

@@ -35,7 +35,7 @@ h2 {
 
 .threeBythree {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   align-items: center;
   justify-content: center;
 }
@@ -92,9 +92,14 @@ img {
 }
 
 .popup {
-  display: flex; 
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   font-size: 24px;
 }
+
+/* .strawber {
+  width: 120px; 
+  height: 120px;
+} */
