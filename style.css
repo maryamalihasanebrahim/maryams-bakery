@@ -1,6 +1,6 @@
 body {
   font-family: 'Pixelify Sans', sans-serif;
-  font-weight: 400;
+  font-weight: 100;
   font-style: normal;
   text-align: center;
   display: flex;
@@ -8,58 +8,48 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-color: #27100F;
 }
 
+#ini_message {
+  color: #F4D7D7;
+}
 button {
   padding: 0px 20px 0px 20px;
+  background-color: #3A2222;
+  border-radius: 8%;
 }
 
 h1 {
-  margin: 20px 10px 10px 10px;
-  font-size: 40px;
+  margin: 20px 10px 0px 10px;
+  font-size: 25px;
   font-weight: 100;
+  color: #ECECEC;
 }
 
 h2 {
-  margin: 0px 10px 20px 10px;
-  font-size: 30px;
   font-weight: 100;
+    color: #ECECEC;
 }
-.board {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
+
+
+
+.board1 {
+  opacity: 1;
 }
+
 
 #left {
-  font-family: 'Pixelify Sans', sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 20px;
-  font-weight: 200;
+  background-color: #8A4644;
   border: none;
-  padding: 10px 40px 10px 40px;
-}
-
-#middle {
+  width: 20vh;
+  height: 6vh;
+  border-radius: 5%;
+  color: #FEFCD4;
+  justify-content: center;
+  align-items: center;
+  font-weight: 100;
+  cursor: pointer;
   font-family: 'Pixelify Sans', sans-serif;
-  font-style: normal;
-  font-weight: bold;
   font-size: 20px;
-  font-weight: 200;
-  border: none;
-  padding: 10px 40px 10px 40px;
 }
-
-#right {
-  font-family: 'Pixelify Sans', sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 20px;
-  font-weight: 200;
-  border: none;
-  padding: 10px 40px 10px 40px;
-}
-

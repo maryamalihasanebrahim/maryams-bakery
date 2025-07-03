@@ -8,7 +8,7 @@ let firstCard = ''
 let firstCardElement = ''
 let secondCard = ''
 let currentScore = 0
-let bestScore = 0
+let bestScore = sessionStorage.getItem('bestScoreOfPlayer')
 let scoreDisplay = document.querySelector('.score')
 let bestDisplay = document.querySelector('.best')
 let heartBeat = false
@@ -22,7 +22,7 @@ let interval
 let timerOn = true
 let timerWorking = true
 let targetDate = undefined
-
+console.log(bestScore)
 // FUNCTIONS
 const updateTimer = () => {
   const now = new Date().getTime()
@@ -59,7 +59,6 @@ const lostWantsToPlayAgain = () => {
     board.style.opacity = '1'
     for (let i = 0; i < cards.length; i++) {
       console.log('enters remover')
-      sessionStorage.setItem('bestScoreOfPlayer', bestScore); 
       background[i].style.backgroundColor = '#3A2222'
       window.location.href = 'playAgain_level_2.html'
     }
@@ -82,11 +81,14 @@ shuffle = () => {
 
 updateScore = () => {
   currentScore++
-  bestScore++
   scoreDisplay.innerText = 'new: ' + currentScore
-  bestDisplay.innerText = 'best: ' + bestScore
+  if (currentScore > bestScore) {
+    bestScore = currentScore
+    bestDisplay.innerText = 'best: ' + bestScore
+  }
   setTimeout(() => {
     if (currentScore >= 10) {
+      bestDisplay.innerText = 'best: ' + bestScore
       stopTimer()
       currentScore = 0
       heartBeat = false
@@ -179,6 +181,9 @@ const startGame = () => {
   heartOfTheGame()
 }
 
+console.log('score is updated')
+
+bestDisplay.innerText = 'best: ' + bestScore
 setTimeout(() => {
   popup.innerText = 'ready?'
 }, 1000)
@@ -192,12 +197,12 @@ setTimeout(() => {
 
 const heartOfTheGame = () => {
   if (timerOn) {
-  shuffle()
-  for (let i = 0; i < cards.length && heartBeat; i++) {
-    console.log('Adding event listeners..')
-    cards[i].addEventListener('click', () => cardGame(i))
+    // shuffle()
+    for (let i = 0; i < cards.length && heartBeat; i++) {
+      console.log('Adding event listeners..')
+      cards[i].addEventListener('click', () => cardGame(i))
+    }
   }
-}
 }
 
 const cardGame = (i) => {

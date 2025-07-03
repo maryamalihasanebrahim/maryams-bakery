@@ -1,4 +1,4 @@
-body {
+/* body {
   font-family: 'Pixelify Sans', sans-serif;
   font-weight: 100;
   font-style: normal;
@@ -8,6 +8,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-color: #27100F;
 }
 
 button {
@@ -18,18 +19,21 @@ h1 {
   margin: 20px 10px 10px 10px;
   font-size: 40px;
   font-weight: 100;
+  color: #ECECEC;
 }
 
 h2 {
   margin: 0px 10px 20px 10px;
   font-size: 30px;
   font-weight: 100;
+    color: #ECECEC;
 }
 .board {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+    background-color: #3A2222;
   gap: 10px;
 }
 
@@ -41,9 +45,13 @@ h2 {
   font-weight: 200;
   border: none;
   padding: 10px 40px 10px 40px;
+  gap: 10px;
+  background-color: #3A2222;
+    color: #FEFCD4;
 }
 
 
 a {
   text-decoration: none;
-}
+  
+} */

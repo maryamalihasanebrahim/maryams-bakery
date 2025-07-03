@@ -8,11 +8,12 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-color: #27100F;
 }
 
 button {
   padding: 0px 20px 0px 20px;
-  background-color: rgb(255, 228, 228);
+  background-color: #3A2222;
   border-radius: 8%;
 }
 
@@ -20,16 +21,18 @@ h1 {
   margin: 20px 10px 0px 10px;
   font-size: 25px;
   font-weight: 100;
+  color: #ECECEC;
 }
 
 h2 {
   font-weight: 100;
+    color: #ECECEC;
 }
 
 .message {
   display: inline-block;
   font-weight: 100;
-  color: #aeaeae;
+color: #F4D7D7;
   margin: 10px 10px 15px 10px;
 }
 
@@ -55,12 +58,14 @@ img {
   text-align: left;
   margin: 0px 10px 2px 10px;
   font-weight: 100;
+  color: #ECECEC;
 }
 
 .best {
   text-align: left;
   margin: 0px 10px 2px 10px;
   font-weight: 100;
+  color: #ECECEC;
 }
 
 .board2 {
@@ -76,12 +81,12 @@ img {
 }
 
 .popup > button {
-  background-color: #f4c1c1;
+  background-color: #8A4644;
   border: none;
   width: 20vh;
   height: 6vh;
   border-radius: 5%;
-  color: rgb(0, 0, 0);
+  color: #FEFCD4;
   justify-content: center;
   align-items: center;
   font-weight: 100;
@@ -97,9 +102,15 @@ img {
   justify-content: center;
   align-items: center;
   font-size: 24px;
+  color: #ECECEC;
 }
 
-/* .strawber {
-  width: 120px; 
-  height: 120px;
-} */
+#timer {
+  font-family: 'Pixelify Sans', sans-serif;
+  text-align: center;
+  margin-top: 10px;
+}
+#time {
+  font-size: 1em;
+color: #B0774D;
+}

@@ -8,7 +8,7 @@ let firstCard = ''
 let firstCardElement = ''
 let secondCard = ''
 let currentScore = 0
-let bestScore = 0
+let bestScore = sessionStorage.getItem('playerBestScore'); 
 let scoreDisplay = document.querySelector('.score')
 let bestDisplay = document.querySelector('.best')
 let heartBeat = false
@@ -23,7 +23,10 @@ let timerOn = true
 let timerWorking = true
 let targetDate = undefined
 
+
+
 // FUNCTIONS
+// the following is taken from https://marina-ferreira.github.io/tutorials/js/memory-game/
 const updateTimer = () => {
   const now = new Date().getTime()
   const difference = targetDate - now
@@ -47,8 +50,8 @@ const updateTimer = () => {
     .padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`
 }
 
-const lostWantsToPlayAgain = () => {
-  playAgain.addEventListener('mouseover', () => {
+const lostWantsToPlayAgain =() => {
+    playAgain.addEventListener('mouseover', () => {
     playAgain.style.opacity = '0.5'
   })
   playAgain.addEventListener('mouseout', () => {
@@ -59,9 +62,8 @@ const lostWantsToPlayAgain = () => {
     board.style.opacity = '1'
     for (let i = 0; i < cards.length; i++) {
       console.log('enters remover')
-      sessionStorage.setItem('bestScoreOfPlayer', bestScore); 
       background[i].style.backgroundColor = '#3A2222'
-      window.location.href = 'playAgain_level_2.html'
+      window.location.href = 'playAgain.html'
     }
   })
 }
@@ -72,7 +74,7 @@ const stopTimer = () => {
   timerWorking = false
   timerOn = false
 }
-// the following is taken from https://marina-ferreira.github.io/tutorials/js/memory-game/
+
 shuffle = () => {
   cards.forEach((card) => {
     let ramdomPos = Math.floor(Math.random() * 12)
@@ -82,17 +84,21 @@ shuffle = () => {
 
 updateScore = () => {
   currentScore++
-  bestScore++
   scoreDisplay.innerText = 'new: ' + currentScore
-  bestDisplay.innerText = 'best: ' + bestScore
+  if(currentScore>bestScore) {
+    bestScore = currentScore
+    bestDisplay.innerText = 'best: ' + bestScore
+
+  }
   setTimeout(() => {
-    if (currentScore >= 10) {
+    if (currentScore >= 6) {
+      // bestDisplay.innerText = 'best: ' + bestScore
       stopTimer()
       currentScore = 0
       heartBeat = false
       board.style.opacity = '0'
       popup.innerText = 'you win!'
-      popup.appendChild(playAgain).innerText = 'play level 3'
+      popup.appendChild(playAgain).innerText = 'play level 2'
       playAgain.style.visibility = 'visible'
       hoverOverPlayAgain()
     }
@@ -129,16 +135,15 @@ let hoverOverPlayAgain = () => {
     board.style.opacity = '1'
     for (let i = 0; i < cards.length; i++) {
       console.log('enters remover')
-      popup.style.margin = '10px 10px 15px 10px'
       background[i].style.backgroundColor = '#3A2222'
-      // cards[i].removeEventListener('click', cardGame)
     }
-    window.location.href = 'level-3.html'
+    window.location.href = 'level-2.html'
   })
 }
 
 let flippingAction = (firstIndex, secondIndex) => {
   if (firstCard === secondCard.id) {
+    // console.log('two cards are the same')
     fruit[firstIndex].style.opacity = '1'
     fruit[secondIndex].style.opacity = '1'
     background[firstIndex].style.backgroundColor = 'white'
@@ -171,6 +176,7 @@ const startGame = () => {
     }
   }
 
+
   setTimeout(() => {
     popup.style.opacity = '1'
     popup.innerText = 'pick your first card'
@@ -179,6 +185,7 @@ const startGame = () => {
   heartOfTheGame()
 }
 
+bestDisplay.innerText = 'best: ' + bestScore
 setTimeout(() => {
   popup.innerText = 'ready?'
 }, 1000)
@@ -192,48 +199,49 @@ setTimeout(() => {
 
 const heartOfTheGame = () => {
   if (timerOn) {
-  shuffle()
-  for (let i = 0; i < cards.length && heartBeat; i++) {
-    console.log('Adding event listeners..')
-    cards[i].addEventListener('click', () => cardGame(i))
-  }
-}
-}
-
-const cardGame = (i) => {
-  popup.innerText = ''
-  // to prevent a card that has been clicked to be clicked again and provide the output of a pair
-  if (cards[i] === firstCardElement) {
-    return
+    // shuffle()
+    for (let i = 0; i < cards.length && heartBeat; i++) {
+      console.log('Adding event listeners..')
+      cards[i].addEventListener('click', () => cardGame(i))
+    }
   }
 
-  if (!firstCard) {
-    firstCard = cards[i].id
-    firstCardElement = cards[i]
-    fruit[i].style.opacity = '1'
-    background[i].style.backgroundColor = 'white'
-    console.log('first card flipped')
-    firstIndex = i
-    return
-  }
-  if (!secondCard) {
-    console.log('first card already picked! and is ' + firstCard)
-    secondCard = cards[i]
-    console.log('second card flipped')
-    fruit[i].style.opacity = '1'
-    background[i].style.backgroundColor = 'white'
-    secondIndex = i
-    flippingAction(firstIndex, secondIndex)
-    firstCard = ''
-    secondCard = ''
-    firstCardElement = ''
-    return
+  const cardGame = (i) => {
+    popup.innerText = ''
+    // to prevent a card that has been clicked to be clicked again and provide the output of a pair
+    if (cards[i] === firstCardElement) {
+      return
+    }
+
+    if (!firstCard) {
+      firstCard = cards[i].id
+      firstCardElement = cards[i]
+      fruit[i].style.opacity = '1'
+      background[i].style.backgroundColor = 'white'
+      console.log('first card flipped')
+      firstIndex = i
+      return
+    }
+    if (!secondCard) {
+      console.log('first card already picked! and is ' + firstCard)
+      secondCard = cards[i]
+      console.log('second card flipped')
+      fruit[i].style.opacity = '1'
+      background[i].style.backgroundColor = 'white'
+      secondIndex = i
+      flippingAction(firstIndex, secondIndex)
+      firstCard = ''
+      secondCard = ''
+      firstCardElement = ''
+      return
+    }
   }
 }
+
 const timer = () => {
   if (timerWorking) {
     // the following segment is taken from https://docs.vultr.com/javascript/examples/create-countdown-timer
-    targetDate = new Date().getTime() + 1000 * 100
+    targetDate = new Date().getTime() + 1000 * 20
 
     interval = setInterval(updateTimer, 1000)
   }

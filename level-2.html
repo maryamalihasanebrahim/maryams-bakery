@@ -4,84 +4,88 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>level-2</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Pixelify+Sans:wght@400..700&family=Zain:ital,wght@0,200;0,300;0,400;0,700;1,300;1,400&display=swap"
       rel="stylesheet"
     />
     <script defer src="level-2.js"></script>
-    <link rel="stylesheet" href="level-2.css">
+    <link rel="stylesheet" href="level-2.css" />
   </head>
   <body>
     <div class="board1">
-      <h1>matchi-matchi</h1>
-      <h4 class="message">game level: level 2</h4>
-      <h4 class="message">board size: 4x5</h4>
+      <h1>maryam's bakery</h1>
+      <h4 class="message">level: 2</h4>
+      <h4 class="message">board size: 5x4</h4>
       <h4 class="score">new: 0</h4>
       <h4 class="best">best: 0</h4>
-      <h4 class="timer"></h4>
+      <div id="timer">
+        <!-- <h1>Countdown Timer</h1> -->
+        <span id="time">00:00</span>
+      </div>
+
       <h2 class="popup"></h2>
       <div class="threeBythree">
-        <button class="cards cherries" id="A7F3">
-          <img class="fruit" id="index0" src="icons/IMG_0945.PNG" alt="" />
+        <button class="cards cake3" id="A7F3">
+          <img class="fruit" id="index0" src="icons/Cake3.png" alt="" />
         </button>
-        <button class="cards cherries" id="A7F3">
-          <img class="fruit" id="index1" src="icons/IMG_0945.PNG" alt="" />
+        <button class="cards cake3" id="A7F3">
+          <img class="fruit" id="index1" src="icons/Cake3.png" alt="" />
         </button>
-        <button class="cards grapes" id="B9D4">
-          <img class="fruit" id="index2" src="icons/IMG_0941.PNG" alt="" />
+        <button class="cards cake6" id="B9D4">
+          <img class="fruit" id="index2" src="icons/Cake6.png" alt="" />
         </button>
-        <button class="cards grapes" id="B9D4">
-          <img class="fruit" src="icons/IMG_0941.PNG" alt="" />
+        <button class="cards cake6" id="B9D4">
+          <img class="fruit" src="icons/Cake6.png" alt="" />
         </button>
-        <button class="cards pear" id="E1C2">
-          <img class="fruit" src="icons/IMG_0944.PNG" alt="" />
+        <button class="cards cake9" id="E1C2">
+          <img class="fruit" src="icons/Cake9.png" alt="" />
         </button>
-        <button class="cards pear" id="E1C2">
-          <img class="fruit" src="icons/IMG_0944.PNG" alt="" />
+        <button class="cards cake9" id="E1C2">
+          <img class="fruit" src="icons/Cake9.png" alt="" />
         </button>
-        <button class="cards peach" id="G8H5">
-          <img class="fruit" src="icons/IMG_0942.PNG" alt="" />
+        <button class="cards cake15" id="G8H5">
+          <img class="fruit" src="icons/Cake15.png" alt="" />
         </button>
-        <button class="cards peach" id="G8H5">
-          <img class="fruit" src="icons/IMG_0942.PNG" alt="" />
+        <button class="cards cake15" id="G8H5">
+          <img class="fruit" src="icons/Cake15.png" alt="" />
         </button>
-        <button class="cards orange" id="C6D1">
-          <img class="fruit" src="icons/Untitled_Artwork.png" alt="" />
+        <button class="cards cake25" id="C6D1">
+          <img class="fruit" src="icons/Cake25.png" alt="" />
         </button>
-        <button class="cards orange" id="C6D1">
-          <img class="fruit" src="icons/Untitled_Artwork.png" alt="" />
+        <button class="cards cake25" id="C6D1">
+          <img class="fruit" src="icons/Cake25.png" alt="" />
         </button>
-        <button class="cards plum" id="E8F9">
-          <img class="fruit" src="icons/plum.png" alt="" />
+        <button class="cards cake8" id="E8F9">
+          <img class="fruit" src="icons/Cake8.png" alt="" />
         </button>
-        <button class="cards plum" id="E8F9">
-          <img class="fruit" src="icons/plum.png" alt="" />
+        <button class="cards cake8" id="E8F9">
+          <img class="fruit" src="icons/Cake8.png" alt="" />
         </button>
-        <button class="cards passion" id="H4G3">
-          <img class="fruit" src="icons/passion_fruit.png" alt="" />
+        <button class="cards cake28" id="H4G3">
+          <img class="fruit" src="icons/Cake28.png" alt="" />
         </button>
-        <button class="cards passion" id="H4G3">
-          <img class="fruit" src="icons/passion_fruit.png" alt="" />
+        <button class="cards cake28" id="H4G3">
+          <img class="fruit" src="icons/Cake28.png" alt="" />
         </button>
-        <button class="cards longan" id="F2C4">
-          <img class="fruit" src="icons/longan.png" alt="" />
+        <button class="cards cake24" id="F2C4">
+          <img class="fruit" src="icons/Cake24.png" alt="" />
         </button>
-        <button class="cards longan" id="F2C4">
-          <img class="fruit" src="icons/longan.png" alt="" />
+        <button class="cards cake24" id="F2C4">
+          <img class="fruit" src="icons/Cake24.png" alt="" />
         </button>
-        <button class="cards pomo" id="M2C4">
-          <img class="fruit" src="icons/pomo.png" alt="" />
+        <button class="cards cake17" id="M2C4">
+          <img class="fruit" src="icons/Cake17.png" alt="" />
         </button>
-        <button class="cards pomo" id="M2C4">
-          <img class="fruit" src="icons/pomo.png" alt="" />
+        <button class="cards cake17" id="M2C4">
+          <img class="fruit" src="icons/Cake17.png" alt="" />
         </button>
-        <button class="cards strawber" id="F6G1">
-          <img class="fruit" src="icons/strawber.png" alt="" />
+        <button class="cards cake20" id="F6G1">
+          <img class="fruit" src="icons/Cake20.png" alt="" />
         </button>
-        <button class="cards strawber" id="F6G1">
-          <img class="fruit" src="icons/strawber.png" alt="" />
+        <button class="cards cake20" id="F6G1">
+          <img class="fruit" src="icons/Cake20.png" alt="" />
         </button>
       </div>
     </div>
