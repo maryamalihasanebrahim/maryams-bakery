@@ -192,7 +192,7 @@ setTimeout(() => {
 
 const heartOfTheGame = () => {
   if (timerOn) {
-  shuffle()
+  // shuffle()
   for (let i = 0; i < cards.length && heartBeat; i++) {
     console.log('Adding event listeners..')
     cards[i].addEventListener('click', () => cardGame(i))

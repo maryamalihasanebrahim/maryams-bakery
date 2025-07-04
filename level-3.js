@@ -59,7 +59,7 @@ const lostWantsToPlayAgain = () => {
     board.style.opacity = '1'
     for (let i = 0; i < cards.length; i++) {
       console.log('enters remover')
-      sessionStorage.setItem('bestestScoreOfPlayer', bestScore); 
+      sessionStorage.setItem('bestestScoreOfPlayer', bestScore)
       background[i].style.backgroundColor = '#3A2222'
       window.location.href = 'playAgain_level_3.html'
     }
@@ -86,15 +86,16 @@ updateScore = () => {
   scoreDisplay.innerText = 'new: ' + currentScore
   bestDisplay.innerText = 'best: ' + bestScore
   setTimeout(() => {
-    if (currentScore >= 18) {
+    if (currentScore >= 14) {
       stopTimer()
       currentScore = 0
       heartBeat = false
       board.style.opacity = '0'
       popup.innerText = 'you win!'
-      popup.appendChild(playAgain).innerText = 'play level 3'
+      popup.appendChild(playAgain).innerText = 'claim prize'
       playAgain.style.visibility = 'visible'
-      hoverOverPlayAgain()
+      hoverOverClaimPrize()
+      // hoverOverPlayAgain()
     }
   }, 400)
   return
@@ -117,7 +118,7 @@ let halfFlip = (firstIndex, secondIndex) => {
   return
 }
 
-let hoverOverPlayAgain = () => {
+const hoverOverClaimPrize = () => {
   playAgain.addEventListener('mouseover', () => {
     playAgain.style.opacity = '0.5'
   })
@@ -125,15 +126,7 @@ let hoverOverPlayAgain = () => {
     playAgain.style.opacity = '1'
   })
   playAgain.addEventListener('click', () => {
-    playAgain.style.display = 'none'
-    board.style.opacity = '1'
-    for (let i = 0; i < cards.length; i++) {
-      console.log('enters remover')
-      popup.style.margin = '10px 10px 15px 10px'
-      background[i].style.backgroundColor = '#3A2222'
-      // cards[i].removeEventListener('click', cardGame)
-    }
-    window.location.href = 'level-3.html'
+    window.location.href = 'winner.html'
   })
 }
 
@@ -192,12 +185,12 @@ setTimeout(() => {
 
 const heartOfTheGame = () => {
   if (timerOn) {
-  // shuffle()
-  for (let i = 0; i < cards.length && heartBeat; i++) {
-    console.log('Adding event listeners..')
-    cards[i].addEventListener('click', () => cardGame(i))
+    // shuffle()
+    for (let i = 0; i < cards.length && heartBeat; i++) {
+      console.log('Adding event listeners..')
+      cards[i].addEventListener('click', () => cardGame(i))
+    }
   }
-}
 }
 
 const cardGame = (i) => {

@@ -60,7 +60,7 @@ const lostWantsToPlayAgain = () => {
     for (let i = 0; i < cards.length; i++) {
       console.log('enters remover')
       background[i].style.backgroundColor = '#3A2222'
-      window.location.href = 'playAgain_level_2.html'
+      window.location.href = 'playAgain_level_3.html'
     }
   })
 }
@@ -87,16 +87,16 @@ updateScore = () => {
     bestDisplay.innerText = 'best: ' + bestScore
   }
   setTimeout(() => {
-    if (currentScore >= 10) {
+    if (currentScore >= 14) {
       bestDisplay.innerText = 'best: ' + bestScore
       stopTimer()
       currentScore = 0
       heartBeat = false
       board.style.opacity = '0'
       popup.innerText = 'you win!'
-      popup.appendChild(playAgain).innerText = 'play level 3'
+      popup.appendChild(playAgain).innerText = 'claim prize'
+      window.location.href = 'winner.html'
       playAgain.style.visibility = 'visible'
-      hoverOverPlayAgain()
     }
   }, 400)
   return

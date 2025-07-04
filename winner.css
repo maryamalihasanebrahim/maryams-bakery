@@ -1,0 +1,90 @@
+body {
+  font-family: 'Pixelify Sans', sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  text-align: left;
+  /* display: grid;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+  /* height: 300vh; */
+  /* display: grid; 
+  grid-template-columns: 1fr 1fr; */
+  background-color: #27100f;
+  margin: 50px;
+  color: antiquewhite;
+}
+
+#recipie {
+  display: grid;
+  grid-template-columns: auto;
+}
+.board1 {
+  text-align: center;
+}
+
+button {
+  padding: 0px 20px 0px 20px;
+  background-color: #3a2222;
+  border-radius: 8%;
+}
+
+h1 {
+  /* margin: 20px; */
+  font-size: 25px;
+  font-weight: 100;
+  color: #64442C;
+}
+
+h2 {
+  font-weight: 100;
+  color: #f1bfbe;
+}
+
+ul {
+  list-style-type: none;
+  font-size: 25px;
+  color: #fefcd4;
+}
+
+#cake_slice {
+  width: 373px;
+  height: 480px;
+  margin: 0px;
+}
+
+.popup {
+  margin: 60px;
+  color: #fefcd4;
+}
+/*
+p {
+  color: #ececec;
+  font-size: 24px;
+}
+
+#title {
+  color: #f1bfbe;
+  font-size: 24px;
+}
+
+#loaf {
+  color: #ececec;
+  font-size: 24px;
+  
+}
+
+#glaze {
+  color: #ececec;
+  font-size: 24px;
+} */
+
+/* 
+.seperate {
+    display: grid; 
+  grid-template-columns: 1fr 1fr;
+}
+
+.popup {
+  margin-bottom: 80px;
+} */
