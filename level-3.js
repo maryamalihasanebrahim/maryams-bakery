@@ -86,7 +86,7 @@ updateScore = () => {
   scoreDisplay.innerText = 'new: ' + currentScore
   bestDisplay.innerText = 'best: ' + bestScore
   setTimeout(() => {
-    if (currentScore >= 14) {
+    if (currentScore >= 15) {
       stopTimer()
       currentScore = 0
       heartBeat = false
@@ -94,6 +94,7 @@ updateScore = () => {
       popup.innerText = 'you win!'
       popup.appendChild(playAgain).innerText = 'claim prize'
       playAgain.style.visibility = 'visible'
+      
       hoverOverClaimPrize()
       // hoverOverPlayAgain()
     }
@@ -118,6 +119,32 @@ let halfFlip = (firstIndex, secondIndex) => {
   return
 }
 
+//  the following was an extract from chatgpt "understood hwo to do it"
+launchConfetti = () => {
+  const container = document.getElementById('confetti-container')
+  const pastelColors = [
+    '#FFD1DC',
+    '#C1E1C1',
+    '#FFFACD',
+    '#D1C4E9',
+    '#B2EBF2',
+    '#FFECB3'
+  ]
+
+  for (let i = 0; i < 30; i++) {
+    const confetti = document.createElement('div')
+    confetti.classList.add('confetti')
+    confetti.style.left = Math.random() * 100 + 'vw'
+    confetti.style.backgroundColor =
+      pastelColors[Math.floor(Math.random() * pastelColors.length)]
+    confetti.style.animationDuration = (1.5 + Math.random()).toFixed(2) + 's'
+    container.appendChild(confetti)
+
+    setTimeout(() => confetti.remove(), 3000)
+  }
+}
+
+
 const hoverOverClaimPrize = () => {
   playAgain.addEventListener('mouseover', () => {
     playAgain.style.opacity = '0.5'
@@ -126,7 +153,10 @@ const hoverOverClaimPrize = () => {
     playAgain.style.opacity = '1'
   })
   playAgain.addEventListener('click', () => {
-    window.location.href = 'winner.html'
+    launchConfetti()
+    setTimeout(() => {
+      window.location.href = 'winner.html'
+    }, 700)
   })
 }
 

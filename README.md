@@ -12,10 +12,13 @@
 
 ### **_Description_**
 
-#### this memory card game allows the user to choose the size of their board and randomizes the placement of the cards accordingly
-
+#### Maryam's Bakery is a bakery themed memory card game 
 ---
 
+### **_Inspiration_**
+<!-- charlie & the choco fac -->
+####
+---
 ### **_Technologies Used_**
 
 #### i used figma to create wireframes to get my basic idea down and vs-code to program the entire thing

@@ -1,0 +1,110 @@
+body {
+  font-family: 'Pixelify Sans', sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* height: 100vh; */
+  background-color: #27100f;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+}
+
+img {
+  width: 185px;
+  height: 275px;
+  padding-left: 80px;
+  padding-right: 80px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+  margin: 0px;
+}
+
+.brownie {
+  transform: rotate(5deg);
+
+}
+.cake {
+  transform: rotate(3deg);
+
+}
+.cookie {
+  transform: rotate(-2deg);
+}
+
+.slice {
+
+}
+button {
+  padding: 0px 20px 0px 20px;
+  background-color: #3a2222;
+  border-radius: 8%;
+}
+
+h1 {
+  margin: 50px 10px 0px 10px;
+  font-size: 25px;
+  font-weight: 100;
+  color: #64442c;
+}
+
+h2 {
+  font-weight: 100;
+  color: #ececec;
+}
+
+.board1 {
+  opacity: 1;
+}
+
+#left {
+  background-color: #8a4644;
+  border: none;
+  width: 20vh;
+  height: 6vh;
+  border-radius: 5%;
+  color: #ffffff;
+  justify-content: center;
+  align-items: center;
+  font-weight: 100;
+  cursor: pointer;
+  font-family: 'Pixelify Sans', sans-serif;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.inside {
+  border: #64442c 4px dashed;
+  border-radius: 2%;
+  padding: 20px;
+}
+
+.instructions {
+  background-color: #F4EDDD;
+  border-radius: 3%;
+  padding: 20px;
+  margin: 20px auto;
+  color: #5c4033;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.instructions h2 {
+  text-align: center;
+  color: #64442c;
+}
+
+.instructions h3 {
+  margin-top: 15px;
+  color: #64442c;
+}
+
+.instructions ul {
+  list-style: 🍪 inside;
+  padding-left: 10px;
+}

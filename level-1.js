@@ -22,6 +22,23 @@ let interval
 let timerOn = true
 let timerWorking = true
 let targetDate
+// let allCardsAreFlipped = true
+
+// const areAllCardsFlipped = () => {
+//   console.log("areAllCardsFlipped works")
+//   for (let i = 0; i < cards.length; i++) {
+//     if (
+//       fruit[i].style.opacity === '1' &&
+//       background[i].style.backgroundColor === 'white'
+//     ) {
+//       console.log(i + ' is flipped')
+//       console.log(allCardsAreFlipped)
+//       allCardsAreFlipped = false
+//       console.log(allCardsAreFlipped)
+//     }
+//   }
+//   return allCardsAreFlipped
+// }
 
 // FUNCTIONS
 const updateTimer = () => {
@@ -58,7 +75,7 @@ const lostWantsToPlayAgain = () => {
     board.style.opacity = '1'
     for (let i = 0; i < cards.length; i++) {
       console.log('enters remover')
-      sessionStorage.setItem('playerBestScore', bestScore); 
+      sessionStorage.setItem('playerBestScore', bestScore)
       background[i].style.backgroundColor = '#3A2222'
       window.location.href = 'playAgain.html'
     }
@@ -85,6 +102,7 @@ updateScore = () => {
   bestScore++
   scoreDisplay.innerText = 'new: ' + currentScore
   bestDisplay.innerText = 'best: ' + bestScore
+  // areAllCardsFlipped()
   setTimeout(() => {
     if (currentScore >= 6) {
       stopTimer()
@@ -97,6 +115,7 @@ updateScore = () => {
       hoverOverPlayAgain()
     }
   }, 400)
+
   return
 }
 
@@ -154,7 +173,7 @@ let flippingAction = (firstIndex, secondIndex) => {
 }
 
 const startGame = () => {
-    timer() 
+  timer()
   firstCard = ''
   firstCardElement = ''
   secondCard = ''
@@ -225,6 +244,7 @@ const heartOfTheGame = () => {
       firstCard = ''
       secondCard = ''
       firstCardElement = ''
+
       return
     }
   }

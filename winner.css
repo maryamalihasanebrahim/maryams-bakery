@@ -3,13 +3,6 @@ body {
   font-weight: 100;
   font-style: normal;
   text-align: left;
-  /* display: grid;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
-  /* height: 300vh; */
-  /* display: grid; 
-  grid-template-columns: 1fr 1fr; */
   background-color: #27100f;
   margin: 50px;
   color: antiquewhite;
@@ -18,7 +11,16 @@ body {
 #recipie {
   display: grid;
   grid-template-columns: auto;
+  background-color: #f4eddd;
+  padding: 30px;
+  border-radius: 3%;
 }
+#text {
+  border: #64442c 5px dashed;
+  padding: 40px;
+  border-radius: 2%;
+}
+
 .board1 {
   text-align: center;
 }
@@ -33,29 +35,37 @@ h1 {
   /* margin: 20px; */
   font-size: 25px;
   font-weight: 100;
-  color: #64442C;
+  color: #64442c;
 }
 
 h2 {
   font-weight: 100;
-  color: #f1bfbe;
+  color: #64442c;
+  font-weight: 500;
+  margin: 0px;
+  padding: 0px;
+}
+
+#ingredients {
+  color: #270a0a;
 }
 
 ul {
   list-style-type: none;
   font-size: 25px;
-  color: #fefcd4;
+  color: #8d6750;
 }
 
 #cake_slice {
   width: 373px;
-  height: 480px;
+  height: 550px;
   margin: 0px;
 }
 
 .popup {
   margin: 60px;
   color: #fefcd4;
+  font-weight: 100;
 }
 /*
 p {

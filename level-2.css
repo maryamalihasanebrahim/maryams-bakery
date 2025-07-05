@@ -7,7 +7,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  /* height: 100vh; */
   background-color: #27100F;
 }
 
@@ -18,7 +18,7 @@ button {
 }
 
 h1 {
-  margin: 20px 10px 0px 10px;
+  margin: 50px 10px 0px 10px;
   font-size: 25px;
   font-weight: 100;
   color: #ECECEC;
@@ -49,6 +49,7 @@ color: #F4D7D7;
   margin: 10px;
   border: none;
   cursor: pointer;
+    box-shadow: 5px 5px #64442b;
 }
 
 img {
@@ -78,6 +79,8 @@ img {
 
 .fruit {
   opacity: 0;
+    height: 40px;
+  width: 40px;
 }
 
 .popup > button {
@@ -111,6 +114,6 @@ img {
   margin-top: 10px;
 }
 #time {
-  font-size: 1em;
-color: #B0774D;
+  font-size: 60px;
+  color: #b0774d;
 }

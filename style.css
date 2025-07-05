@@ -11,16 +11,7 @@ body {
   background-color: #27100f;
 }
 
-#yellow {
-  display: inline-block;
-  color: #eba3a3;
-  text-decoration: underline;
-}
 
-#ini_message {
-  color: #f4d7d7;
-  font-size: 20px;
-}
 button {
   padding: 0px 20px 0px 20px;
   background-color: #3a2222;
@@ -31,7 +22,7 @@ h1 {
   margin: 20px 10px 0px 10px;
   font-size: 25px;
   font-weight: 100;
-  color: #ececec;
+  color: #64442c;
 }
 
 h2 {
@@ -57,4 +48,17 @@ h2 {
   font-family: 'Pixelify Sans', sans-serif;
   font-size: 20px;
   margin-top: 10px;
+}
+
+img {
+  width: 320px;
+  height: 450px;
+  margin: 0px;
+}
+
+a {
+  text-decoration: none;
+  color: #fefcd5;
+  text-decoration: underline;
+  font-weight: 100;
 }
