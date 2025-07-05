@@ -22,23 +22,7 @@ let interval
 let timerOn = true
 let timerWorking = true
 let targetDate
-// let allCardsAreFlipped = true
 
-// const areAllCardsFlipped = () => {
-//   console.log("areAllCardsFlipped works")
-//   for (let i = 0; i < cards.length; i++) {
-//     if (
-//       fruit[i].style.opacity === '1' &&
-//       background[i].style.backgroundColor === 'white'
-//     ) {
-//       console.log(i + ' is flipped')
-//       console.log(allCardsAreFlipped)
-//       allCardsAreFlipped = false
-//       console.log(allCardsAreFlipped)
-//     }
-//   }
-//   return allCardsAreFlipped
-// }
 
 // FUNCTIONS
 const updateTimer = () => {

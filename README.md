@@ -1,8 +1,6 @@
-# matchi-matchi
-
-(adorable) memory card game.
-
-## Date: DD/MM/YYYY
+![](icons/header.png)
+# Maryam's Bakery
+## Date: 08/07/2025
 
 ### By: Maryam Ali Redha
 
@@ -10,14 +8,31 @@
 
 ---
 
-### **_Description_**
+### **Description**
 
-#### Maryam's Bakery is a bakery themed memory card game 
+#### Maryam's Bakery is a a fun and visually sweet memory card game themed around delicious baked treats. Flip the cards, match the pairs, and advance through three increasingly challenging levels to win your prize at the end. Perfect for all ages and dessert lovers!
 ---
 
-### **_Inspiration_**
+### **Inspiration & Theme**
 <!-- charlie & the choco fac -->
-####
+<!-- ![](https://m.media-amazon.com/images/I/81Dp5Of3zeL.jpg) -->
+<img src="https://m.media-amazon.com/images/I/81Dp5Of3zeL.jpg" width="150">
+<img src="icons/golden_ticket_bar.png" width="185">
+
+---
+
+The visual style and theme of Maryam's Bakery were heavily inspired by Charlie and the Chocolate Factory. The game draws from the whimsical, chocolate-filled world created by Roald Dahl, especially the iconic Wonka Bars and their coveted Golden Tickets.
+
+In the movie, the Golden Ticket served as a magical entrance into Willy Wonka’s factory – a place where secret recipes, fantastical sweets, and imagination came to life.
+
+In a similar spirit, completing all three levels of the game rewards players with a “Claim Prize” button – a nod to the Golden Ticket — which whisks them away to a secret recipe page. 
+
+There, instead of Everlasting Gobstoppers or Fizzy Lifting Drinks, players are treated to real favorite recipes:
+
+Fudgy Brownies, Gooey Chocolate Chip Cookies, and Rich Chocolate Cake
+
+Just like the movie, it’s a **sweet** reward for curiosity, perseverance, and a love of chocolate!
+
 ---
 ### **_Technologies Used_**
 

@@ -11,6 +11,7 @@ body {
 #recipie {
   display: grid;
   grid-template-columns: auto;
+  grid-template-rows: 1fr auto;
   background-color: #f4eddd;
   padding: 30px;
   border-radius: 3%;
@@ -62,39 +63,31 @@ ul {
   margin: 0px;
 }
 
+
 .popup {
   margin: 60px;
   color: #fefcd4;
   font-weight: 100;
 }
-/*
-p {
-  color: #ececec;
-  font-size: 24px;
+
+
+.print {
+  font-family: 'Pixelify Sans', sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  display: flex; 
+  align-self: right;
+  justify-content: right;
+  background-color: #f4eddd;
+  text-align: left;
+  cursor: pointer;
+  font-size: 19px;
+  border: none;
+  padding: 0px;
 }
 
-#title {
-  color: #f1bfbe;
-  font-size: 24px;
+.printer {
+  width: 20px;
+  height: 20px;
+  padding-right: 5px;
 }
-
-#loaf {
-  color: #ececec;
-  font-size: 24px;
-  
-}
-
-#glaze {
-  color: #ececec;
-  font-size: 24px;
-} */
-
-/* 
-.seperate {
-    display: grid; 
-  grid-template-columns: 1fr 1fr;
-}
-
-.popup {
-  margin-bottom: 80px;
-} */
