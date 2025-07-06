@@ -16,8 +16,8 @@
 ### **Inspiration & Theme**
 <!-- charlie & the choco fac -->
 <!-- ![](https://m.media-amazon.com/images/I/81Dp5Of3zeL.jpg) -->
-<img src="https://m.media-amazon.com/images/I/81Dp5Of3zeL.jpg" width="150">
-<img src="icons/golden_ticket_bar.png" width="185">
+<img src="https://m.media-amazon.com/images/I/81Dp5Of3zeL.jpg" width="200"><img src="icons/golden_ticket_bar.png" width="325">
+
 
 ---
 
