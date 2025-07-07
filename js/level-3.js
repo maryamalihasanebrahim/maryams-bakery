@@ -189,8 +189,10 @@ const startGame = () => {
   for (let i = 0; i < cards.length; i++) {
     if (flag) {
       fruit[i].style.opacity = '1'
+      cards[i].style.backgroundColor = 'white'
       setTimeout(() => {
         fruit[i].style.opacity = '0'
+        cards[i].style.backgroundColor = '#3A2222'
       }, 2000)
     }
   }

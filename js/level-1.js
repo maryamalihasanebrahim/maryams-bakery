@@ -33,12 +33,12 @@ const updateTimer = () => {
   if (difference < 0) {
     document.getElementById('time').innerHTML = 'time over!'
     board.style.opacity = '0'
+    console.log(popup)
     popup.appendChild(playAgain).innerText = 'play again'
     playAgain.style.visibility = 'visible'
-    popup.innerHTML = ''
+    lostWantsToPlayAgain()
     timerOn = false
     clearInterval(interval)
-    lostWantsToPlayAgain()
     return
   }
   const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60))
@@ -167,8 +167,10 @@ const startGame = () => {
   for (let i = 0; i < cards.length; i++) {
     if (flag) {
       fruit[i].style.opacity = '1'
+            cards[i].style.backgroundColor = 'white'
       setTimeout(() => {
         fruit[i].style.opacity = '0'
+                cards[i].style.backgroundColor = '#3A2222'
       }, 2000)
     }
   }
@@ -233,7 +235,7 @@ const timer = () => {
   if (timerWorking) {
     clearInterval(interval)
     // the following segment is taken from https://docs.vultr.com/javascript/examples/create-countdown-timer
-    targetDate = new Date().getTime() + 1000 * 60
+    targetDate = new Date().getTime() + 1000 * 40
     interval = setInterval(updateTimer, 1000)
   }
 }

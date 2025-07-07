@@ -25,7 +25,7 @@ let targetDate = undefined
 const match = new Audio('images/90s-game-ui-6-185099.mp3')
 const nextLevel = new Audio('images/level-up-05-326133.mp3')
 const wrong = new Audio('images/wrong_answer.mp3')
-const winning = new Audio ('images/prize.wav') 
+const winning = new Audio('images/prize.wav')
 
 // FUNCTIONS
 const updateTimer = () => {
@@ -156,8 +156,10 @@ const startGame = () => {
   for (let i = 0; i < cards.length; i++) {
     if (flag) {
       fruit[i].style.opacity = '1'
+      cards[i].style.backgroundColor = 'white'
       setTimeout(() => {
         fruit[i].style.opacity = '0'
+        cards[i].style.backgroundColor = '#3A2222'
       }, 2000)
     }
   }
@@ -221,7 +223,7 @@ const cardGame = (i) => {
 const timer = () => {
   if (timerWorking) {
     // the following segment is taken from https://docs.vultr.com/javascript/examples/create-countdown-timer
-    targetDate = new Date().getTime() + 1000 * 10
+    targetDate = new Date().getTime() + 1000 * 100
 
     interval = setInterval(updateTimer, 1000)
   }

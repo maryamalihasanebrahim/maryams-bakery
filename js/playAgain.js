@@ -166,8 +166,10 @@ const startGame = () => {
   for (let i = 0; i < cards.length; i++) {
     if (flag) {
       fruit[i].style.opacity = '1'
+      cards[i].style.backgroundColor = 'white'
       setTimeout(() => {
         fruit[i].style.opacity = '0'
+        cards[i].style.backgroundColor = '#3A2222'
       }, 2000)
     }
   }
@@ -232,7 +234,7 @@ const heartOfTheGame = () => {
 const timer = () => {
   if (timerWorking) {
     // the following segment is taken from https://docs.vultr.com/javascript/examples/create-countdown-timer
-    targetDate = new Date().getTime() + 1000 * 20
+    targetDate = new Date().getTime() + 1000 * 40
 
     interval = setInterval(updateTimer, 1000)
   }
