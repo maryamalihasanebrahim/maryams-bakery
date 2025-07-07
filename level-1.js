@@ -23,13 +23,11 @@ let timerOn = true
 let timerWorking = true
 let targetDate
 
-
 // FUNCTIONS
 const updateTimer = () => {
   const now = new Date().getTime()
   const difference = targetDate - now
   if (difference < 0) {
-    console.log('you lose')
     document.getElementById('time').innerHTML = 'time over!'
     board.style.opacity = '0'
     popup.appendChild(playAgain).innerText = 'play again'
@@ -58,7 +56,6 @@ const lostWantsToPlayAgain = () => {
     playAgain.style.display = 'none'
     board.style.opacity = '1'
     for (let i = 0; i < cards.length; i++) {
-      console.log('enters remover')
       sessionStorage.setItem('playerBestScore', bestScore)
       background[i].style.backgroundColor = '#3A2222'
       window.location.href = 'playAgain.html'
@@ -86,7 +83,6 @@ updateScore = () => {
   bestScore++
   scoreDisplay.innerText = 'new: ' + currentScore
   bestDisplay.innerText = 'best: ' + bestScore
-  // areAllCardsFlipped()
   setTimeout(() => {
     if (currentScore >= 6) {
       stopTimer()
@@ -131,7 +127,6 @@ let hoverOverPlayAgain = () => {
     playAgain.style.display = 'none'
     board.style.opacity = '1'
     for (let i = 0; i < cards.length; i++) {
-      console.log('enters remover')
       background[i].style.backgroundColor = '#3A2222)'
     }
     window.location.href = 'level-2.html'
@@ -140,13 +135,11 @@ let hoverOverPlayAgain = () => {
 
 let flippingAction = (firstIndex, secondIndex) => {
   if (firstCard === secondCard.id) {
-    // console.log('two cards are the same')
     fruit[firstIndex].style.opacity = '1'
     fruit[secondIndex].style.opacity = '1'
     background[firstIndex].style.backgroundColor = 'white'
     background[secondIndex].style.backgroundColor = 'white'
     updateScore()
-    console.log('matched! resetting card choices')
     firstCard = ''
     secondCard = ''
     firstCardElement = ''
@@ -161,8 +154,6 @@ const startGame = () => {
   firstCard = ''
   firstCardElement = ''
   secondCard = ''
-
-  console.log('In startgame, is there a card? ' + firstCard + secondCard)
   flag = true
   for (let i = 0; i < cards.length; i++) {
     if (flag) {
@@ -194,9 +185,8 @@ setTimeout(() => {
 
 const heartOfTheGame = () => {
   if (timerOn) {
-    // shuffle()
+    shuffle()
     for (let i = 0; i < cards.length && heartBeat; i++) {
-      console.log('Adding event listeners..')
       cards[i].addEventListener('click', () => cardGame(i))
     }
   }
@@ -213,14 +203,11 @@ const heartOfTheGame = () => {
       firstCardElement = cards[i]
       fruit[i].style.opacity = '1'
       background[i].style.backgroundColor = 'white'
-      console.log('first card flipped')
       firstIndex = i
       return
     }
     if (!secondCard) {
-      console.log('first card already picked! and is ' + firstCard)
       secondCard = cards[i]
-      console.log('second card flipped')
       fruit[i].style.opacity = '1'
       background[i].style.backgroundColor = 'white'
       secondIndex = i
@@ -228,7 +215,6 @@ const heartOfTheGame = () => {
       firstCard = ''
       secondCard = ''
       firstCardElement = ''
-
       return
     }
   }

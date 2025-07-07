@@ -9,7 +9,7 @@ const getRandom = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min
 }
 let which = getRandom(1, 3)
-console.log(which)
+
 
 recipie1.style.display = 'none'
 recipie2.style.display = 'none'

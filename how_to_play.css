@@ -7,7 +7,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* height: 100vh; */
   background-color: #27100f;
 }
 
@@ -32,14 +31,12 @@ img {
 
 .cake {
   transform: rotate(3deg);
-
 }
 .cookie {
   transform: rotate(-2deg);
 }
 
 .slice {
-
 }
 button {
   padding: 0px 20px 0px 20px;
@@ -86,7 +83,7 @@ h2 {
 }
 
 .instructions {
-  background-color: #F4EDDD;
+  background-color: #f4eddd;
   border-radius: 3%;
   padding: 20px;
   margin: 20px auto;

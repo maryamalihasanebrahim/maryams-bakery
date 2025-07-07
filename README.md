@@ -12,8 +12,6 @@
 
 ### **Description**
 
----
-
 ####
 
 Maryam’s Bakery is a memory card game themed around classic baked treats. Match pairs across three levels, each increasing in difficulty.
@@ -45,21 +43,21 @@ Just like the movie, it’s a **sweet** reward for curiosity, perseverance, and 
 ---
 
 ### **Technologies Used**
----
-#### 
+
+####
+
 This project was:
 
-Programmed using VS Code v1.101.2 
-  - HTML, CSS, JavaScript
+Programmed using VS Code v1.101.2
+
+- HTML, CSS, JavaScript
 
 Designed using Figma v125.5.6
 
 ---
 
-
-
 ### **Screenshots**
----
+
 #### Landing Page
 
 ![Landing Page](images/landing_page.png)
@@ -73,33 +71,66 @@ Designed using Figma v125.5.6
 ![Game in Action](images/level_2.png)
 
 #### Player Wins
-<video src="images/winning.mov"></video>
+
+![Player Wins](images/winning.gif)
+
+---
+
+### **Favorite Function**
+
+The core of this game lies in the function below. Crafting it involved extensive logic planning and troubleshooting.
+```
+const heartOfTheGame = () => {
+  if (timerOn) {
+    shuffle()
+    for (let i = 0; i < cards.length && heartBeat; i++) {
+      cards[i].addEventListener('click', () => cardGame(i))
+    }
+  }
+
+  const cardGame = (i) => {
+    popup.innerText = ''
+    // to prevent a card that has been clicked to be clicked again and provide the output of a pair
+    if (cards[i] === firstCardElement) {
+      return
+    }
+
+    if (!firstCard) {
+      firstCard = cards[i].id
+      firstCardElement = cards[i]
+      fruit[i].style.opacity = '1'
+      background[i].style.backgroundColor = 'white'
+      firstIndex = i
+      return
+    }
+    if (!secondCard) {
+      secondCard = cards[i]
+      fruit[i].style.opacity = '1'
+      background[i].style.backgroundColor = 'white'
+      secondIndex = i
+      flippingAction(firstIndex, secondIndex)
+      firstCard = ''
+      secondCard = ''
+      firstCardElement = ''
+      return
+    }
+  }
+}
+```
+
+---
+
+### **Unsolved Problems**
+#### 
+Clicking the same pair of cards creates a loophole that allows players to bypass parts of the game. To address this, I suggest implementing an array of card objects, each with a boolean property indicating whether it has already been matched. This will prevent previously matched cards from being reused to skip rounds and increment score.
 
 
 ---
 
-### **_Pseudocode_**
+### **Credits**
 
-Delared global variables like cards, pop-up messages, score display.  
-For example:
+[Countdown Timer](https://docs.vultr.com/javascript/examples/create-countdown-timer)
 
-- `let cards = document.querySelectorAll('.cards')`
-- `let fruit = document.querySelectorAll('.fruit')`
-- `let start = document.querySelector('.message')`
-
-Then uncovered functions through diagrams drawn on paper.
-For example:
-
-- `updateScore = () => {currentScore++ scoreDisplay.innerText = 'new: ' + currentScore}`
-
-Finally invoking those functions.
-
----
-
-### **_Future Updates_**
-
----
-
-### **_Credits_**
+[Shuffling Cards](https://marina-ferreira.github.io/tutorials/js/memory-game/)
 
 ---
