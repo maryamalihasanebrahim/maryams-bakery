@@ -8,7 +8,7 @@ let firstCard = ''
 let firstCardElement = ''
 let secondCard = ''
 let currentScore = 0
-let bestScore = sessionStorage.getItem('playerBestScore'); 
+let bestScore = sessionStorage.getItem('playerBestScore')
 let scoreDisplay = document.querySelector('.score')
 let bestDisplay = document.querySelector('.best')
 let heartBeat = false
@@ -22,8 +22,9 @@ let interval
 let timerOn = true
 let timerWorking = true
 let targetDate = undefined
-
-
+const match = new Audio('images/90s-game-ui-6-185099.mp3')
+const nextLevel = new Audio('images/level-up-05-326133.mp3')
+const wrong = new Audio('images/wrong_answer.mp3')
 
 // FUNCTIONS
 // the following is taken from https://marina-ferreira.github.io/tutorials/js/memory-game/
@@ -49,8 +50,8 @@ const updateTimer = () => {
     .padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`
 }
 
-const lostWantsToPlayAgain =() => {
-    playAgain.addEventListener('mouseover', () => {
+const lostWantsToPlayAgain = () => {
+  playAgain.addEventListener('mouseover', () => {
     playAgain.style.opacity = '0.5'
   })
   playAgain.addEventListener('mouseout', () => {
@@ -81,12 +82,12 @@ shuffle = () => {
 }
 
 updateScore = () => {
+  match.play()
   currentScore++
   scoreDisplay.innerText = 'new: ' + currentScore
-  if(currentScore>bestScore) {
+  if (currentScore > bestScore) {
     bestScore = currentScore
     bestDisplay.innerText = 'best: ' + bestScore
-
   }
   setTimeout(() => {
     if (currentScore >= 6) {
@@ -112,6 +113,7 @@ let halfFlip = (firstIndex, secondIndex) => {
       background[secondIndex].style.backgroundColor = '#3A2222'
     }, 1000)
     popup.innerText = 'try again'
+    wrong.play()
     popup.style.opacity = '1'
     setTimeout(() => {
       popup.innerText = ''
@@ -131,9 +133,11 @@ let hoverOverPlayAgain = () => {
     playAgain.style.display = 'none'
     board.style.opacity = '1'
     for (let i = 0; i < cards.length; i++) {
-      background[i].style.backgroundColor = '#3A2222'
+      background[i].style.backgroundColor = '#3A2222)'
     }
-    window.location.href = 'level-2.html'
+    setTimeout(() => {
+      window.location.href = 'level-2.html'
+    }, 1000)
   })
 }
 
@@ -167,7 +171,6 @@ const startGame = () => {
       }, 2000)
     }
   }
-
 
   setTimeout(() => {
     popup.style.opacity = '1'

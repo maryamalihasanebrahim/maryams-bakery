@@ -22,6 +22,10 @@ let interval
 let timerOn = true
 let timerWorking = true
 let targetDate = undefined
+const match = new Audio('images/90s-game-ui-6-185099.mp3')
+const nextLevel = new Audio('images/level-up-05-326133.mp3')
+const wrong = new Audio('images/wrong_answer.mp3')
+const winning = new Audio('images/prize.wav')
 
 // FUNCTIONS
 const updateTimer = () => {
@@ -33,6 +37,8 @@ const updateTimer = () => {
     board.style.opacity = '0'
     popup.appendChild(playAgain).innerText = 'play again'
     playAgain.style.visibility = 'visible'
+    playAgain.style.backgroundColor = '#814A46'
+    playAgain.style.color = '#FEFCD8'
     lostWantsToPlayAgain()
     timerOn = false
     clearInterval(interval)
@@ -59,7 +65,7 @@ const lostWantsToPlayAgain = () => {
     for (let i = 0; i < cards.length; i++) {
       sessionStorage.setItem('bestestScoreOfPlayer', bestScore)
       background[i].style.backgroundColor = '#3A2222'
-      window.location.href = 'playAgain_level_3.html'
+      window.location.href = 'play_again_level_3.html'
     }
   })
 }
@@ -79,6 +85,7 @@ shuffle = () => {
 }
 
 updateScore = () => {
+  match.play()
   currentScore++
   bestScore++
   scoreDisplay.innerText = 'new: ' + currentScore
@@ -92,9 +99,7 @@ updateScore = () => {
       popup.innerText = 'you win!'
       popup.appendChild(playAgain).innerText = 'claim prize'
       playAgain.style.visibility = 'visible'
-
       hoverOverClaimPrize()
-      // hoverOverPlayAgain()
     }
   }, 400)
   return
@@ -109,6 +114,7 @@ let halfFlip = (firstIndex, secondIndex) => {
       background[secondIndex].style.backgroundColor = '#3A2222'
     }, 1000)
     popup.innerText = 'try again'
+    wrong.play()
     popup.style.opacity = '1'
     setTimeout(() => {
       popup.innerText = ''
@@ -150,10 +156,11 @@ const hoverOverClaimPrize = () => {
     playAgain.style.opacity = '1'
   })
   playAgain.addEventListener('click', () => {
+    winning.play()
     launchConfetti()
     setTimeout(() => {
       window.location.href = 'winner.html'
-    }, 700)
+    }, 900)
   })
 }
 
@@ -246,7 +253,7 @@ const cardGame = (i) => {
 const timer = () => {
   if (timerWorking) {
     // the following segment is taken from https://docs.vultr.com/javascript/examples/create-countdown-timer
-    targetDate = new Date().getTime() + 1000 * 60
+    targetDate = new Date().getTime() + 1000 * 100
 
     interval = setInterval(updateTimer, 1000)
   }

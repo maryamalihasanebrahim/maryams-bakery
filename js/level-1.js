@@ -22,6 +22,9 @@ let interval
 let timerOn = true
 let timerWorking = true
 let targetDate
+const match = new Audio('images/90s-game-ui-6-185099.mp3')
+const nextLevel = new Audio('images/level-up-05-326133.mp3')
+const wrong = new Audio('images/wrong_answer.mp3')
 
 // FUNCTIONS
 const updateTimer = () => {
@@ -32,6 +35,7 @@ const updateTimer = () => {
     board.style.opacity = '0'
     popup.appendChild(playAgain).innerText = 'play again'
     playAgain.style.visibility = 'visible'
+    popup.innerHTML = ''
     timerOn = false
     clearInterval(interval)
     lostWantsToPlayAgain()
@@ -79,6 +83,7 @@ shuffle = () => {
 }
 
 updateScore = () => {
+  match.play()
   currentScore++
   bestScore++
   scoreDisplay.innerText = 'new: ' + currentScore
@@ -108,6 +113,7 @@ let halfFlip = (firstIndex, secondIndex) => {
       background[secondIndex].style.backgroundColor = '#3A2222'
     }, 1000)
     popup.innerText = 'try again'
+    wrong.play()
     popup.style.opacity = '1'
     setTimeout(() => {
       popup.innerText = ''
@@ -124,12 +130,15 @@ let hoverOverPlayAgain = () => {
     playAgain.style.opacity = '1'
   })
   playAgain.addEventListener('click', () => {
+    nextLevel.play()
     playAgain.style.display = 'none'
     board.style.opacity = '1'
     for (let i = 0; i < cards.length; i++) {
       background[i].style.backgroundColor = '#3A2222)'
     }
-    window.location.href = 'level-2.html'
+    setTimeout(() => {
+      window.location.href = 'level-2.html'
+    }, 1000)
   })
 }
 

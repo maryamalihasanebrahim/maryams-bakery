@@ -22,6 +22,9 @@ let interval
 let timerOn = true
 let timerWorking = true
 let targetDate = undefined
+const match = new Audio('images/90s-game-ui-6-185099.mp3')
+const nextLevel = new Audio('images/level-up-05-326133.mp3')
+const wrong = new Audio('images/wrong_answer.mp3')
 
 // FUNCTIONS
 const updateTimer = () => {
@@ -57,9 +60,9 @@ const lostWantsToPlayAgain = () => {
     playAgain.style.display = 'none'
     board.style.opacity = '1'
     for (let i = 0; i < cards.length; i++) {
-      sessionStorage.setItem('bestScoreOfPlayer', bestScore); 
+      sessionStorage.setItem('bestScoreOfPlayer', bestScore)
       background[i].style.backgroundColor = '#3A2222'
-      window.location.href = 'playAgain_level_2.html'
+      window.location.href = 'play_again_level_2.html'
     }
   })
 }
@@ -79,6 +82,7 @@ shuffle = () => {
 }
 
 updateScore = () => {
+  match.play()
   currentScore++
   bestScore++
   scoreDisplay.innerText = 'new: ' + currentScore
@@ -107,6 +111,7 @@ let halfFlip = (firstIndex, secondIndex) => {
       background[secondIndex].style.backgroundColor = '#3A2222'
     }, 1000)
     popup.innerText = 'try again'
+    wrong.play()
     popup.style.opacity = '1'
     setTimeout(() => {
       popup.innerText = ''
@@ -125,11 +130,15 @@ let hoverOverPlayAgain = () => {
   playAgain.addEventListener('click', () => {
     playAgain.style.display = 'none'
     board.style.opacity = '1'
+
     for (let i = 0; i < cards.length; i++) {
+      nextLevel.play()
       popup.style.margin = '10px 10px 15px 10px'
-      background[i].style.backgroundColor = '#3A2222'
+      background[i].style.backgroundColor = '#3A2222)'
     }
-    window.location.href = 'level-3.html'
+    setTimeout(() => {
+      window.location.href = 'level-3.html'
+    }, 1000)
   })
 }
 
@@ -185,11 +194,11 @@ setTimeout(() => {
 
 const heartOfTheGame = () => {
   if (timerOn) {
-  shuffle()
-  for (let i = 0; i < cards.length && heartBeat; i++) {
-    cards[i].addEventListener('click', () => cardGame(i))
+    shuffle()
+    for (let i = 0; i < cards.length && heartBeat; i++) {
+      cards[i].addEventListener('click', () => cardGame(i))
+    }
   }
-}
 }
 
 const cardGame = (i) => {

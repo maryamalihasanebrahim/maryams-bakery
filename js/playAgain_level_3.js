@@ -22,6 +22,10 @@ let interval
 let timerOn = true
 let timerWorking = true
 let targetDate = undefined
+const match = new Audio('images/90s-game-ui-6-185099.mp3')
+const nextLevel = new Audio('images/level-up-05-326133.mp3')
+const wrong = new Audio('images/wrong_answer.mp3')
+const winning = new Audio ('images/prize.wav') 
 
 // FUNCTIONS
 const updateTimer = () => {
@@ -31,7 +35,10 @@ const updateTimer = () => {
   if (difference < 0) {
     document.getElementById('time').innerHTML = 'time over!'
     board.style.opacity = '0'
+    popup.innerText = ''
     popup.appendChild(playAgain).innerText = 'play again'
+    playAgain.style.backgroundColor = '#814A46'
+    playAgain.style.color = '#FEFCD8'
     playAgain.style.visibility = 'visible'
     lostWantsToPlayAgain()
     timerOn = false
@@ -56,9 +63,10 @@ const lostWantsToPlayAgain = () => {
   playAgain.addEventListener('click', () => {
     playAgain.style.display = 'none'
     board.style.opacity = '1'
+
     for (let i = 0; i < cards.length; i++) {
       background[i].style.backgroundColor = '#3A2222'
-      window.location.href = 'playAgain_level_3.html'
+      window.location.href = 'play_again_level_3.html'
     }
   })
 }
@@ -78,6 +86,7 @@ shuffle = () => {
 }
 
 updateScore = () => {
+  match.play()
   currentScore++
   scoreDisplay.innerText = 'new: ' + currentScore
   if (currentScore > bestScore) {
@@ -93,8 +102,11 @@ updateScore = () => {
       board.style.opacity = '0'
       popup.innerText = 'you win!'
       popup.appendChild(playAgain).innerText = 'claim prize'
-      window.location.href = 'winner.html'
-      playAgain.style.visibility = 'visible'
+      playAgain.addEventListener('click', () => {
+        window.location.href = 'winner.html'
+        playAgain.style.visibility = 'visible'
+        winning.play()
+      })
     }
   }, 400)
   return
@@ -109,30 +121,13 @@ let halfFlip = (firstIndex, secondIndex) => {
       background[secondIndex].style.backgroundColor = '#3A2222'
     }, 1000)
     popup.innerText = 'try again'
+    wrong.play()
     popup.style.opacity = '1'
     setTimeout(() => {
       popup.innerText = ''
     }, 1000)
   }
   return
-}
-
-let hoverOverPlayAgain = () => {
-  playAgain.addEventListener('mouseover', () => {
-    playAgain.style.opacity = '0.5'
-  })
-  playAgain.addEventListener('mouseout', () => {
-    playAgain.style.opacity = '1'
-  })
-  playAgain.addEventListener('click', () => {
-    playAgain.style.display = 'none'
-    board.style.opacity = '1'
-    for (let i = 0; i < cards.length; i++) {
-      popup.style.margin = '10px 10px 15px 10px'
-      background[i].style.backgroundColor = '#3A2222'
-    }
-    window.location.href = 'level-3.html'
-  })
 }
 
 let flippingAction = (firstIndex, secondIndex) => {
@@ -226,7 +221,7 @@ const cardGame = (i) => {
 const timer = () => {
   if (timerWorking) {
     // the following segment is taken from https://docs.vultr.com/javascript/examples/create-countdown-timer
-    targetDate = new Date().getTime() + 1000 * 100
+    targetDate = new Date().getTime() + 1000 * 10
 
     interval = setInterval(updateTimer, 1000)
   }

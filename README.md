@@ -21,9 +21,6 @@ Inspired by Charlie and the Chocolate Factory, the game’s design echoes the lo
 ---
 
 ### **Inspiration & Theme**
-
-<!-- charlie & the choco fac -->
-<!-- ![](https://m.media-amazon.com/images/I/81Dp5Of3zeL.jpg) -->
 <img src="icons/inspiration_board.png">
 
 ---
