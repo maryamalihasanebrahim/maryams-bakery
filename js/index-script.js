@@ -13,7 +13,6 @@ button.addEventListener('click', () => {
 
 how.addEventListener('click', () => {
     setTimeout(() => {
-    console.log('sound playing')
     window.location.href = 'how_to_play.html'
   }, 800)
   select.play()

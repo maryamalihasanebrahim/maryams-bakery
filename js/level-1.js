@@ -33,7 +33,6 @@ const updateTimer = () => {
   if (difference < 0) {
     document.getElementById('time').innerHTML = 'time over!'
     board.style.opacity = '0'
-    console.log(popup)
     popup.appendChild(playAgain).innerText = 'play again'
     playAgain.style.visibility = 'visible'
     lostWantsToPlayAgain()
