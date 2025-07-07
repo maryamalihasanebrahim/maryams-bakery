@@ -45,34 +45,36 @@ Just like the movie, it’s a **sweet** reward for curiosity, perseverance, and 
 ---
 
 ### **Technologies Used**
+---
+#### 
+This project was:
 
-#### i used figma to create wireframes to get my basic idea down and vs-code to program the entire thing
+Programmed using VS Code v1.101.2 
+  - HTML, CSS, JavaScript
+
+Designed using Figma v125.5.6
 
 ---
 
-### **Getting Started**
 
+
+### **Screenshots**
 ---
-
-## <video loop src="icons/winning.mov"></video>
-
-### **_Screenshots_**
-
 #### Landing Page
 
-![Landing Page](images/landing.png)
+![Landing Page](images/landing_page.png)
 
-#### Landing Page 2
+#### How to Play?
 
-![Landing Page 2](images/landing-2.png)
+![How to play?](images/how_to_play.png)
 
 #### Game in Action
 
-![Game in Action](images/game.png)
+![Game in Action](images/level_2.png)
 
-#### End of Game
+#### Player Wins
+<video src="images/winning.mov"></video>
 
-![End of a Game](images/end.png)
 
 ---
 
