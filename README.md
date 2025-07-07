@@ -119,7 +119,7 @@ const heartOfTheGame = () => {
 
 ### **Unsolved Problems**
 #### 
-Clicking the same pair of cards creates a loophole that allows players to bypass parts of the game. To address this, I suggest implementing an array of card objects, each with a boolean property indicating whether it has already been matched. This will prevent previously matched cards from being reused to skip rounds and increment score.
+Clicking the same pair of cards creates a loophole that allows players to bypass levels of the game. To address this, I suggest implementing an array of card objects, each with a boolean property indicating whether it has already been matched. This will prevent previously matched cards from being reused to skip rounds and increment the score.
 
 
 ---
