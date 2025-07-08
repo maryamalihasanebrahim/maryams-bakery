@@ -1,4 +1,5 @@
-![](icons/header.png)(https://apathetic-fight.surge.sh/)
+![](icons/header.png)
+[click me to play!](https://apathetic-fight.surge.sh/)
 
 
 # Maryam's Bakery
